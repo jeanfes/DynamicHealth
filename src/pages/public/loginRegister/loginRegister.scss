@@ -1,0 +1,148 @@
+.loginRegister {
+  background-color: var(--colorWhite);
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.loginRegister p {
+  font-family: Mansfield;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.3px;
+}
+
+.loginRegister span {
+  font-family: Mansfield;
+  font-size: 12px;
+}
+
+.loginRegister button.hidden {
+  background-color: transparent;
+  border-color: var(--colorWhite);
+}
+
+.loginRegister .formLoginRegister {
+  background-color: var(--colorWhite);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0 40px;
+  height: 100%;
+}
+
+.formContainer {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+}
+
+.signIn {
+  left: 0;
+  width: 50%;
+  z-index: 2;
+}
+
+.loginRegister.active .signIn {
+  transform: translateX(100%);
+}
+
+.signUp {
+  left: 0;
+  width: 50%;
+  opacity: 0;
+  z-index: 1;
+}
+
+.loginRegister.active .signUp {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+  animation: move 0.6s;
+}
+
+@keyframes move {
+  0%,
+  49.99% {
+    opacity: 0;
+    z-index: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 1;
+    z-index: 5;
+  }
+}
+
+.toggleContainer {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: all 0.6s ease-in-out;
+  box-shadow: -4px 4px 0px var(--colorBlack);
+  z-index: 1000;
+
+  .toggle {
+    background-color: var(--colorCyan);
+    height: 100%;
+    background: var(--colorCyan);
+    color: var(--colorWhite);
+    font-family: Mansfield;
+    position: relative;
+    left: -100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+
+    .togglePanel {
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      justify-content: center;
+      flex-direction: column;
+      padding: 0 30px;
+      text-align: center;
+      top: 0;
+      transform: translateX(0);
+      transition: all 0.6s ease-in-out;
+    }
+  }
+}
+
+.loginRegister.active .toggleContainer {
+  transform: translateX(-100%);
+  box-shadow: 4px 4px 0px var(--colorBlack);
+  border: none;
+}
+
+.loginRegister.active .toggle {
+  transform: translateX(50%);
+}
+
+.toggleLeft {
+  transform: translateX(-200%);
+}
+
+.loginRegister.active .toggleLeft {
+  transform: translateX(0);
+}
+
+.toggleRight {
+  right: 0;
+  transform: translateX(0);
+}
+
+.loginRegister.active .toggleRight {
+  transform: translateX(200%);
+}

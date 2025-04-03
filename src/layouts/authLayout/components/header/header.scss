@@ -1,0 +1,24 @@
+.headerAuthLayout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  .headerIcon {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+
+    p {
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--colorBlack);
+    }
+
+    img {
+      width: 50px;
+    }
+  }
+}

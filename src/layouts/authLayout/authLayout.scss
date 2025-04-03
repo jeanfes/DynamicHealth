@@ -1,0 +1,10 @@
+.authLayout {
+  width: 100%;
+  min-height: fit-content;
+  height: 100%;
+  display: grid;
+  background-color: var(--colorWhite);
+  padding: 24px;
+  grid: "header" auto "main" 1fr;
+  gap: 42px;
+}

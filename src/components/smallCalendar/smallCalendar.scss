@@ -1,0 +1,203 @@
+/* Calendario pequeño */
+.smallCalendar {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  background: var(--colorCyan);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
+  .fc-theme-standard td,
+  .fc-theme-standard th,
+  .fc-theme-standard .fc-scrollgrid {
+    border: none;
+  }
+
+  .fc .fc-toolbar.fc-header-toolbar {
+    margin-bottom: 0px;
+    border-radius: var(--Corner-radius-atomo-interno, 8px);
+    background: var(--backgroundGlass);
+    background-blend-mode: overlay, normal;
+    box-shadow: 0px 0px 14px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Botones de navegación (anterior y siguiente) */
+  .fc .fc-prev-button,
+  .fc .fc-next-button {
+    background-color: transparent;
+    color: #ccc;
+    border: none;
+  }
+
+  .fc .fc-prev-button:hover,
+  .fc .fc-next-button:hover {
+    background-color: transparent;
+  }
+
+  /* Cambiar el estilo del título principal del mes */
+  .fc-toolbar-title {
+    color: var(--colorBlack);
+    font-family: Mansfield-Bold;
+    text-transform: capitalize;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+
+  .fc .fc-scrollgrid-section-sticky > * {
+    background: transparent;
+  }
+
+  .fc .selected-day {
+    background-color: var(--colorWhite) !important;
+    border-radius: 50%;
+    font-weight: bold;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &.has-event::after {
+      content: "";
+      position: absolute;
+      bottom: 9px;
+      width: 5px;
+      height: 5px;
+      background-color: var(--colorLila);
+      border-radius: 50%;
+    }
+  }
+
+  .fc-col-header-cell.fc-day-sun {
+    color: var(--colorWhite);
+  }
+
+  .fc .event-day {
+    position: relative;
+  }
+
+  .fc-day-sun {
+    color: var(--colorWhite);
+  }
+
+  .holiday-day {
+    color: var(--colorWhite);
+  }
+
+  /* Estilo de los nombres de los días */
+  .fc-col-header-cell {
+    color: var(--colorBlack);
+    text-align: center;
+    font-family: Mansfield-Bold !important;
+    font-size: 16px;
+    text-transform: capitalize;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 150%;
+  }
+
+  .fc table {
+    margin-top: 4px;
+  }
+
+  .fc tbody {
+    border-top: 1px solid #d9d9d9;
+  }
+
+  /* Eliminar bordes de las celdas del calendario */
+  .fc .fc-daygrid-day {
+    position: relative;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    border: none;
+
+    &.has-event::after {
+      content: "";
+      position: absolute;
+      bottom: 9px;
+      right: 19px;
+      width: 5px;
+      height: 5px;
+      background-color: var(--colorLila);
+      border-radius: 50%;
+    }
+  }
+
+  /* Color del dia actual */
+  .fc .fc-daygrid-day.fc-day-today {
+    background-color: white;
+    border-radius: 50%;
+  }
+
+  /* Eliminar bordes de la tabla del calendario */
+  .fc .fc-scrollgrid {
+    border: none;
+  }
+
+  /* Ajustar cualquier borde restante de los encabezados */
+  .fc .fc-scrollgrid-section {
+    border: none;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  /* Estilo de la tabla de días */
+  .fc-daygrid-day {
+    text-align: center;
+    font-size: 14px;
+  }
+
+  /* Ajuste para hacer que se vea más compacto */
+  .fc .fc-daygrid-day-frame {
+    width: 45px;
+    height: 45px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none !important;
+
+    .fc-daygrid-day-events {
+      position: absolute;
+      background-color: none;
+      margin: 0;
+      z-index: -1;
+    }
+
+    .fc-h-event {
+      background: none;
+      border: none;
+    }
+  }
+
+  /* Ocultar bordes extras */
+  .fc-daygrid-day-top {
+    justify-content: center;
+  }
+
+  /* Tamaño del número de cada día */
+  .fc-daygrid-day-number {
+    font-size: 14px;
+    color: var(--colorBlack);
+    font-family: Mansfield-SemiBold;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+
+  .fc .fc-button-primary:not(:disabled).fc-button-active:focus,
+  .fc .fc-button-primary:not(:disabled):active:focus {
+    box-shadow: none;
+  }
+
+  .fc .fc-button-primary:focus {
+    box-shadow: none;
+  }
+
+  .fc-direction-ltr .fc-toolbar > * > :not(:first-child) {
+    display: none;
+  }
+}

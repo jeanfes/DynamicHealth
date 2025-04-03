@@ -1,0 +1,56 @@
+@font-face {
+  font-family: "Mansfield-ExtraLight";
+  src: url("../src/assets/fonts/mansfield/Mansfield-Extra-Light.ttf");
+}
+
+@font-face {
+  font-family: "Mansfield-Light";
+  src: url("../src/assets/fonts/mansfield/Mansfield-Light.ttf");
+}
+
+@font-face {
+  font-family: "Mansfield";
+  src: url("../src/assets/fonts/mansfield/Mansfield.ttf");
+}
+
+@font-face {
+  font-family: "Mansfield-SemiBold";
+  src: url("../src/assets/fonts/mansfield/Mansfield-Semi-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Mansfield-Bold";
+  src: url("../src/assets/fonts/mansfield/Mansfield-Bold.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  height: 100vh;
+  scroll-behavior: smooth;
+  background-color: #f8f8f8;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "Mansfield", "Roboto";
+  margin: 0;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+:root {
+  --colorBlack: #181b32;
+  --colorWhite: #ffffff;
+  --colorCyan: #3fbdf1;
+  --colorYellow: #f5bd33;
+}

@@ -1,0 +1,44 @@
+.landing {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 5px solid var(--colorBlack);
+  align-items: center;
+
+  .landingLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    .landingText {
+      text-transform: uppercase;
+      font-size: clamp(3rem, 5vw, 4rem);
+      color: var(--colorBlack);
+      font-family: Mansfield-SemiBold;
+
+      span {
+        color: var(--colorCyan);
+      }
+    }
+
+    .landingButtons {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      width: 100%;
+    }
+  }
+
+  .landingImage {
+    max-width: 800px;
+    width: 40%;
+    height: fit-content;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

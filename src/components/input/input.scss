@@ -1,0 +1,49 @@
+.mainInputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+
+  .mainInput {
+    width: 100%;
+    gap: 0;
+  }
+
+  input {
+    width: 100%;
+    height: 40px;
+    border-radius: 0px;
+    font-family: Mansfield;
+    border: 2px solid var(--colorBlack);
+    background-color: var(--colorWhite);
+    box-shadow: 4px 4px var(--colorBlack);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--colorBlack);
+    padding: 5px 10px;
+    outline: none;
+  }
+
+  input::placeholder {
+    font-family: Mansfield;
+    color: #666;
+    opacity: 0.8;
+  }
+
+  input:focus {
+    border: 2px solid var(--colorCyan);
+  }
+
+  .inputDate {
+    position: relative;
+    width: 100%;
+
+    .calendarIcon {
+      position: absolute;
+      top: 52%;
+      right: 10px;
+      transform: translateY(-50%);
+      color: var(--colorBlack);
+    }
+  }
+}

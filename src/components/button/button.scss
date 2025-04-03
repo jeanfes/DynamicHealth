@@ -1,0 +1,50 @@
+.mainButton {
+  height: fit-content;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-family: Mansfield;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: var(--colorBlack);
+  border: 2px solid var(--colorBlack);
+  box-shadow: 4px 4px 0px var(--colorBlack);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.primaryButton {
+  background-color: var(--colorCyan);
+}
+
+.secondaryButton {
+  background-color: var(--colorYellow);
+}
+
+.tertiaryButton {
+  background-color: var(--colorWhite);
+}
+
+.primaryButton:active {
+  background-color: var(--colorWhite);
+}
+
+.secondaryButton:active {
+  background-color: var(--colorCyan);
+}
+
+.tertiaryButton:active {
+  background-color: var(--colorYellow);
+}
+
+.mainButton:hover {
+  color: var(--colorBlack);
+  border: 2px solid var(--colorBlack);
+  box-shadow: none;
+}
+
+.mainButton:active {
+  box-shadow: none;
+  transform: translateY(4px);
+}

@@ -1,0 +1,122 @@
+.headerFullLayout {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0px 16px;
+    border: 2px solid var(--colorBlack);
+    background: var(--colorCyan);
+    box-shadow: 4px 4px 0px var(--colorBlack);
+
+    .headerLeft {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        .headerLogo {
+            width: 32px;
+            height: 32px;
+        }
+
+        .menuHeader {
+            height: 100%;
+            cursor: pointer;
+            display: flex;
+            padding: 0 12px;
+            align-items: center;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                border-left: 4px solid var(--colorBlack);
+                border-right: 4px solid var(--colorBlack);
+                background-color: var(--colorWhite);
+            }
+
+            .menuHeaderItem {
+                font-family: Mansfield;
+                font-size: 16px;
+                font-weight: 500;
+                color: var(--colorBlack);
+            }
+        }
+    }
+
+    .headerRight {
+        display: flex;
+        align-items: center;
+        padding: 8px 0px;
+        gap: 16px;
+
+        .buttonMenuProfile {
+            cursor: pointer;
+            width: 45px;
+            padding: 12px 0px;
+            height: 45px;
+            border-radius: 50%;
+            border: 2px solid var(--colorBlack);
+            background-color: var(--colorWhite);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+
+            p {
+                font-family: Mansfield;
+                font-size: 14px;
+                color: var(--colorBlack);
+                font-weight: 600;
+            }
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        .menuProfile {
+            position: absolute;
+            top: 58px;
+            right: 16px;
+            width: 200px;
+            background-color: var(--colorCyan);
+            border: 2px solid var(--colorBlack);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+            .menuProfileItem {
+                font-family: Mansfield;
+                font-size: 14px;
+                color: var(--colorBlack);
+                font-weight: 600;
+                text-align: center;
+                padding: 4px;
+                border-radius: 4px;
+
+                button {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    cursor: pointer;
+                    background-color: transparent;
+                    color: var(--colorBlack);
+                    font-family: Mansfield;
+                    font-size: 14px;
+                    font-weight: 600;
+                    border: 2px solid transparent;
+                    padding: 4px;
+                    outline: none;
+                    width: 100%;
+
+                    &:hover {
+                        border: 2px solid var(--colorBlack);
+                    }
+                }
+
+            }
+        }
+    }
+}

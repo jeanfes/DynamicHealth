@@ -1,0 +1,17 @@
+.fullLayout {
+    width: 100%;
+    min-height: fit-content;
+    height: 100%;
+    display: grid;
+    background-color: var(--colorWhite);
+    grid: "header" auto "main" 1fr;
+
+    .headerFullLayout {
+        grid-area: header;
+    }
+
+    .fullLayoutChildren {
+        grid-area: main;
+        padding: 4px;
+    }
+}

@@ -7,4 +7,12 @@
   padding: 24px;
   grid: "header" auto "main" 1fr;
   gap: 32px;
+
+  .headerAuthLayout {
+    grid-area: header;
+  }
+
+  .authLayoutChildren{
+    grid-area: main;
+  }
 }

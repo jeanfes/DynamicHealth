@@ -3,10 +3,12 @@
 import AuthLayout from "@/layouts/authLayout/AuthLayout";
 import FullLayout from "@/layouts/fullLayout/FullLayout";
 
+import Home from "@/pages/private/home/Home";
 import LoginRegister from "@/pages/public/loginRegister/LoginRegister";
+import MyAppointments from "@/pages/private/myAppointments/MyAppointments";
+import RequestAppointment from "@/pages/private/requestAppointment/RequestAppointment";
 import NotFound from "@/pages/public/notFound/notFound";
 import Landing from "@/pages/public/landing/Landing";
-import Home from "@/pages/private/home/Home";
 
 import PrivateRoute from "./validateRoutes/PrivateRoute";
 import PublicRoute from "./validateRoutes/PublicRoute";
@@ -47,6 +49,14 @@ const Routes = () => {
                 {
                     path: "/home",
                     element: <Home />
+                },
+                {
+                    path: "/my-appointments",
+                    element: <MyAppointments />
+                },
+                {
+                    path: "/request-appointment",
+                    element: <RequestAppointment />
                 }
             ],
         },

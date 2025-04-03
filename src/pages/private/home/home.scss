@@ -1,0 +1,10 @@
+.home {
+    height: 100%;
+    display: flex;
+    padding: 4px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    border-bottom: 2px solid var(--colorBlack);
+}

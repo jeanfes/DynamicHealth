@@ -1,0 +1,116 @@
+.linkCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    width: 300px;
+    padding: 20px;
+    background: var(--colorWhite);
+    border: 6px solid var(--colorBlack);
+    box-shadow: 12px 12px 0 var(--colorBlack);
+    transition: transform 0.3s, box-shadow 0.3s;
+
+    &:hover {
+        transform: translate(-5px, -5px);
+        box-shadow: 17px 17px 0 var(--colorBlack);
+    }
+
+    .linkCardTitle {
+        font-size: 32px;
+        font-weight: 900;
+        font-family: Mansfield;
+        color: var(--colorBlack);
+        display: block;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .linkCardTitle::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 90%;
+        height: 3px;
+        background-color: var(--colorBlack);
+        transform: translateX(-100%);
+        transition: transform 0.3s;
+    }
+
+    .linkCard:hover .linkCardTitle::after {
+        transform: translateX(0);
+    }
+
+    .linkCardButton {
+        border: 3px solid var(--colorBlack);
+        background: var(--colorBlack);
+        font-family: Mansfield;
+        color: var(--colorWhite);
+        padding: 10px;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.3s;
+        width: 50%;
+        height: 100%;
+    }
+
+    .linkCardIcon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .linkCardButton::before {
+        content: "Seguro?";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 105%;
+        background-color: var(--colorCyan);
+        color: var(--colorBlack);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translateY(100%);
+        transition: transform 0.3s;
+    }
+
+    .linkCardButton:hover::before {
+        transform: translateY(0);
+    }
+
+    .linkCardButton:active {
+        transform: scale(0.95);
+    }
+
+    @keyframes glitch {
+        0% {
+            transform: translate(2px, 2px);
+        }
+
+        25% {
+            transform: translate(-2px, -2px);
+        }
+
+        50% {
+            transform: translate(-2px, 2px);
+        }
+
+        75% {
+            transform: translate(2px, -2px);
+        }
+
+        100% {
+            transform: translate(2px, 2px);
+        }
+    }
+
+    .glitch {
+        animation: glitch 0.3s infinite;
+    }
+}

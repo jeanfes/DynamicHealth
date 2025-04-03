@@ -57,7 +57,7 @@ const LoginRegister = () => {
           id: "123",
           profile: {
             id: 1,
-            identification_type: "DNI",
+            identification_type: "CC",
             name: "Juan",
             last_name: "Pérez",
             email: "juan.perez@example.com",
@@ -65,6 +65,7 @@ const LoginRegister = () => {
           },
           token: "abcdef123456",
           identification_number: values.loginIdentificationNumber || "",
+          photo: "",
         };
         login(user);
         setTimeout(() => {

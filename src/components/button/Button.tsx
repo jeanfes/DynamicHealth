@@ -10,6 +10,7 @@ interface ButtonProps {
   background?: string;
   style?: React.CSSProperties;
   id?: string;
+  type?: "button" | "submit" | "reset";
   onClick?: () => void;
   design?: "primaryButton" | "secondaryButton" | "tertiaryButton";
 }
@@ -23,6 +24,7 @@ export const Button = ({
   style,
   id,
   onClick,
+  type = "button",
   design = "primaryButton",
 }: ButtonProps) => {
   return (
@@ -31,6 +33,7 @@ export const Button = ({
       disabled={loading && loading}
       onClick={onClick}
       id={id}
+      type={type}
       style={{
         width: maxWidth ? "100%" : "max-content",
         ...style,

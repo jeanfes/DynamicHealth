@@ -3,7 +3,6 @@ import { IconCalendar } from "@/assets/icons/IconCalendar";
 import IconWarning from "@/assets/icons/IconWarning";
 import { useState } from "react";
 import "./input.scss";
-
 interface InputProps {
   value: string;
   onChange: (value: string) => void;
@@ -28,23 +27,22 @@ export const Input = ({
   placeholder,
   disabled = false,
   showWarning = false,
-  showErrorMessage,
+  showErrorMessage = false,
   type = "text",
 }: InputProps) => {
   const [showPassword, setShowPassword] = useState(false);
 
-  // Función para formatear la fecha a YYYY/MM/DD mientras se escribe
   const formatDate = (input: string) => {
-    const digits = input.replace(/\D/g, ""); // elimina caracteres que no sean dígitos
+    const digits = input.replace(/\D/g, "");
     let formatted = "";
     if (digits.length > 0) {
-      formatted = digits.substring(0, 4);
+      formatted = digits.substring(0, 2);
+    }
+    if (digits.length >= 3) {
+      formatted += "/" + digits.substring(2, 4);
     }
     if (digits.length >= 5) {
-      formatted += "/" + digits.substring(4, 6);
-    }
-    if (digits.length >= 7) {
-      formatted += "/" + digits.substring(6, 8);
+      formatted += "/" + digits.substring(4, 8);
     }
     return formatted;
   };
@@ -87,7 +85,7 @@ export const Input = ({
           <div className="inputDate">
             <input
               {...props}
-              placeholder={placeholder + " (aaaa/mm/dd"}
+              placeholder={placeholder}
               disabled={disabled}
               autoComplete="off"
               value={value}

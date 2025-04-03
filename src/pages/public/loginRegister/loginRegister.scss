@@ -4,13 +4,12 @@
   overflow: hidden;
   width: 100%;
   height: 100%;
-}
-
-.loginRegister p {
-  font-family: Mansfield;
-  font-size: 14px;
-  line-height: 20px;
-  letter-spacing: 0.3px;
+  .toggleText {
+    font-family: Mansfield;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.3px;
+  }
 }
 
 .loginRegister span {

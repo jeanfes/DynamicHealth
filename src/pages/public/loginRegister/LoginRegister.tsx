@@ -158,7 +158,7 @@ const LoginRegister = () => {
         <div className="toggle">
           <div className="togglePanel toggleLeft">
             <h1>¡Bienvenido de nuevo!</h1>
-            <p>
+            <p className="toggleText">
               Ingresa tus datos personales para acceder a todas las funciones
             </p>
             <Button
@@ -170,7 +170,7 @@ const LoginRegister = () => {
           </div>
           <div className="togglePanel toggleRight">
             <h1>¡Hola!</h1>
-            <p>
+            <p className="toggleText">
               Regístrate con tus datos personales para acceder a todas las funciones
             </p>
             <Button

@@ -184,3 +184,16 @@
     border: 2px solid var(--colorBlack);
     background-color: var(--colorRed);
 }
+
+.cardDisponibilityModal {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 16px;
+
+    .cardDisponibilityModalDetails {
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+    }
+}

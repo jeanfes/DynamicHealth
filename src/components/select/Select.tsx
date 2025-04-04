@@ -10,6 +10,7 @@ interface CustomSelectProps {
     iconColor?: string;
     sx?: React.CSSProperties;
     className?: string;
+    placeholder?: string;
 }
 
 export const Select = ({
@@ -18,34 +19,28 @@ export const Select = ({
     onChange,
     background = "var(--colorCyan)",
     iconColor = "var(--colorBlack)",
-    sx,
     className,
+    placeholder = "Seleccionar...",
 }: CustomSelectProps) => {
     return (
         <MuiSelect
+            className={className}
             sx={{
                 width: "100%",
-                height: "40px",
+                height: "50px",
                 background: background,
                 backgroundBlendMode: "overlay, normal",
-                boxShadow: "0px 0px 8.601px 0px rgba(0, 0, 0, 0.10)",
-                backdropFilter: "blur(12.901785850524902px)",
-                borderRadius: "8px",
+                boxShadow: "4px 4px 0px var(--colorBlack)",
+                borderRadius: "0px",
                 border: "2px solid var(--colorBlack)",
                 textTransform: "capitalize",
                 fontFamily: "Mansfield-Bold",
                 color: "var(--colorBlack)",
                 fontSize: "15px",
-                padding: "8px",
-                div: {
-                    padding: "0",
-                },
                 ">fieldset": {
                     display: "none",
                 },
-                ...sx,
             }}
-            className={className}
             IconComponent={() => (
                 <svg
                     style={{
@@ -62,58 +57,95 @@ export const Select = ({
                     viewBox="0 0 14 9"
                     fill="none"
                 >
-                    <path d="M1 1.66357L7 7.66357L13 1.66357" stroke={iconColor} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    <path
+                        d="M1 1.66357L7 7.66357L13 1.66357"
+                        stroke="var(--colorBlack)"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                    />
                 </svg>
             )}
             value={value}
-            onChange={(event) => {
-                onChange(event.target.value);
-            }}
+            onChange={(e) => onChange(e.target.value)}
+            displayEmpty
             renderValue={(selected) => {
-                const selectedItem = options.find((opt) => opt.value === selected);
-                return (
-                    <Box display="flex" alignItems="center" gap={2} sx={{ marginLeft: "10px" }}>
-                        {selectedItem?.iconLeft && selectedItem.iconLeft}
-                        {selectedItem?.label}
-                        {selectedItem?.iconRight && selectedItem.iconRight}
-                    </Box>
-                );
+                if (!selected) {
+                    return (
+                        <span
+                            style={{
+                                color: "var(--colorBlack)",
+                                fontFamily: "Mansfield-Bold",
+                            }}
+                        >
+                            {placeholder}
+                        </span>
+                    );
+                }
+                const selectedOption = options.find((option) => option.value === selected);
+                return selectedOption ? selectedOption.label : selected;
             }}
             MenuProps={{
                 PaperProps: {
-                    style: {
-                        maxHeight: "500px",
-                        width: "100%",
-                        fontFamily: "Mansfield-Bold",
-                        background: background,
-                        boxShadow: "0px 0px 8.601px 0px rgba(0, 0, 0, 0.10)",
-                        backdropFilter: "blur(12.901785850524902px)",
-                        borderRadius: "8px",
+                    sx: {
+                        marginTop: "8px",
+                        background: "var(--colorCyan)",
+                        borderRadius: "0px",
+                        maxHeight: "300px",
                         border: "2px solid var(--colorBlack)",
-                        color: "var(--colorBlack)",
-                        fontSize: "15px",
-                        padding: "8px",
+                        boxShadow: "4px 4px 0px var(--colorBlack)",
+                        "& .MuiMenuItem-root": {
+                            color: "var(--colorBlack)",
+                            fontFamily: "Mansfield-Bold",
+                        },
                     },
-                },
-                anchorOrigin: {
-                    vertical: "bottom",
-                    horizontal: "left",
-                },
-                transformOrigin: {
-                    vertical: "top",
-                    horizontal: "left",
                 },
             }}
         >
-            {options.map((option) => (
-                <MenuItem key={option.value} value={option.value}>
-                    <Box display="flex" alignItems="center" gap={2}>
-                        {option?.iconLeft && option.iconLeft}
-                        {option.label}
-                        {option?.iconRight && option.iconRight}
-                    </Box>
-                </MenuItem>
-            ))}
-        </MuiSelect>
+            {
+                options.map((option, index) => (
+                    <MenuItem
+                        key={index}
+                        value={option.value}
+                        sx={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                            padding: "10px 15px",
+                            "&:hover": {
+                                backgroundColor: "var(--colorCyan)",
+                            },
+                        }}
+                    >
+                        <Box
+                            sx={{
+                                display: "flex",
+                                alignItems: "center",
+                                gap: "8px",
+                            }}
+                        >
+                            {option.iconLeft && (
+                                <Box
+                                    sx={{
+                                        color: iconColor,
+                                    }}
+                                >
+                                    {option.iconLeft}
+                                </Box>
+                            )}
+                            <span>{option.label}</span>
+                        </Box>
+                        {option.iconRight && (
+                            <Box
+                                sx={{
+                                    color: iconColor,
+                                }}
+                            >
+                                {option.iconRight}
+                            </Box>
+                        )}
+                    </MenuItem>
+                ))
+            }
+        </MuiSelect >
     );
 };

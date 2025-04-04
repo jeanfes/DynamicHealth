@@ -7,7 +7,8 @@ import "./alertModal.scss";
 interface AlertModalProps {
     open: boolean;
     handleClose: () => void;
-    type?: "success" | "error" | "confirmation";
+    type?: "success" | "error" | "confirmation" | "modal";
+    designButtonConfirmation?: "buttonCyan" | "buttonRed" | "buttonWhite";
     textButton?: string;
     onClick?: () => void;
     title?: string;
@@ -34,12 +35,19 @@ const typeStyles = {
         titleColor: "var(--colorBlack)",
         shadow: "4px 4px var(--colorBlack)",
     },
+    modal: {
+        backgroundColor: "var(--colorWhite)",
+        borderColor: "var(--colorBlack)",
+        titleColor: "var(--colorBlack)",
+        shadow: "4px 4px var(--colorBlack)",
+    },
 };
 
 export const AlertModal = ({
     open,
     handleClose,
     type = "confirmation",
+    designButtonConfirmation,
     title = "",
     children,
     showCloseIcon = true,
@@ -56,7 +64,11 @@ export const AlertModal = ({
     };
 
     return (
-        <Modal open={open} onClose={handleClose} className="alertModal">
+        <Modal
+            open={open}
+            onClose={showCloseIcon ? () => handleClose() : undefined}
+            className="alertModal"
+        >
             <div
                 className="alertModalContainer"
                 style={{
@@ -81,8 +93,17 @@ export const AlertModal = ({
                         </picture>
                     )}
                 </div>
-                <div style={{ color: "var(--colorBlack)", fontSize: "16px" }}>{children}</div>
-                {type === "confirmation" && <Button text={textButton} maxWidth design="buttonRed" onClick={handleClick} />}
+                <div style={{ color: "var(--colorBlack)", fontSize: "16px" }}>
+                    {children}
+                </div>
+                {type === "confirmation" && (
+                    <Button
+                        text={textButton}
+                        maxWidth
+                        design={designButtonConfirmation || "buttonCyan"}
+                        onClick={handleClick}
+                    />
+                )}
             </div>
         </Modal>
     );

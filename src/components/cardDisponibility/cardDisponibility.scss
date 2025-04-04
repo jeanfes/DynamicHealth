@@ -1,4 +1,4 @@
-.cardAppointment {
+.cardDisponibility {
     user-select: none;
     cursor: pointer;
     display: flex;
@@ -6,10 +6,11 @@
     align-items: center;
     width: 100%;
     padding: 16px;
+    background-color: var(--colorCyan);
     border: 2px solid var(--colorBlack);
     box-shadow: 4px 4px 0px var(--colorBlack);
 
-    .cardAppointmentDateContainer {
+    .cardDisponibilityDateContainer {
         display: flex;
         background-color: var(--colorWhite);
         flex-direction: column;
@@ -18,51 +19,51 @@
         padding: 12px;
         gap: 4px;
 
-        .cardAppointmentDay {
+        .cardDisponibilityDay {
             font-family: Mansfield-SemiBold;
             font-size: 20px;
             color: var(--colorBlack);
         }
 
-        .cardAppointmentMonth {
+        .cardDisponibilityMonth {
             font-family: Mansfield-SemiBold;
             font-size: 14px;
             color: var(--colorBlack);
         }
 
-        .cardAppointmentYear {
+        .cardDisponibilityYear {
             font-family: Mansfield-SemiBold;
             font-size: 14px;
             color: var(--colorBlack);
         }
     }
 
-    .cardAppointmentDetails {
+    .cardDisponibilityDetails {
         display: flex;
         flex-direction: column;
         gap: 4px;
         width: 100%;
         padding: 0 4px;
 
-        .cardAppointmentDoctor {
+        .cardDisponibilityDoctor {
             font-family: Mansfield-SemiBold;
             font-size: 24px;
             color: var(--colorBlack);
         }
 
-        .cardAppointmentTime {
+        .cardDisponibilityTime {
             font-family: Mansfield-SemiBold;
             font-size: 16px;
             color: var(--colorBlack);
         }
 
-        .cardAppointmentLocation {
+        .cardDisponibilityLocation {
             font-family: Mansfield-SemiBold;
             font-size: 16px;
             color: var(--colorBlack);
         }
 
-        .cardAppointmentSpecialty {
+        .cardDisponibilitySpecialty {
             font-family: Mansfield-SemiBold;
             font-size: 16px;
             color: var(--colorBlack);
@@ -75,12 +76,10 @@
     }
 }
 
-.cardAppointmentModal {
-    display: flex;
-    flex-direction: column;
+.cardDisponibilityModal {
     margin-bottom: 12px;
 
-    .cardAppointmentModalTitle {
+    .cardDisponibilityModalTitle {
         font-family: Mansfield-SemiBold;
         font-size: 24px;
         color: var(--colorBlack);
@@ -88,7 +87,7 @@
         margin-bottom: 8px;
     }
 
-    .cardAppointmentModalDetails {
+    .cardDisponibilityModalDetails {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -99,13 +98,13 @@
             border-bottom: none;
         }
 
-        .cardAppointmentModalLabel {
+        .cardDisponibilityModalLabel {
             font-family: Mansfield-SemiBold;
             font-size: 16px;
             color: var(--colorBlack);
         }
 
-        .cardAppointmentModalValue {
+        .cardDisponibilityModalValue {
             font-family: Mansfield-SemiBold;
             font-size: 16px;
             color: var(--colorBlack);

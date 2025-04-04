@@ -1,0 +1,193 @@
+.fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events {
+    min-height: 6em;
+    height: 2em;
+    overflow: auto;
+}
+
+.fc-direction-ltr .fc-button-group>.fc-button:not(:last-child) {
+    border: none;
+    padding: 5px;
+    background-color: transparent;
+    color: var(--colorBlack);
+    font-family: Mansfield;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border-radius: 10px;
+    margin-right: 8px;
+}
+
+.fc-direction-ltr .fc-button-group>.fc-button:not(:first-child) {
+    border: none;
+    background-color: transparent;
+    color: var(--colorBlack);
+    padding: 5px;
+    font-family: Mansfield-SemiBold;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border-radius: 10px;
+    margin-right: 8px;
+}
+
+.fc .fc-button-primary:not(:disabled).fc-button-active,
+.fc .fc-button-primary:not(:disabled):active {
+    background-color: var(--colorCyan) !important;
+    border: none;
+    color: var(--colorWhite);
+}
+
+.fc .fc-button-primary:not(:disabled).fc-button-active:focus,
+.fc .fc-button-primary:not(:disabled):active:focus {
+    box-shadow: none;
+}
+
+.fc .fc-button-primary:focus {
+    box-shadow: none;
+}
+
+.fc-direction-ltr .fc-toolbar>*> :not(:first-child) {
+    display: none;
+}
+
+.fc .fc-daygrid-day.fc-day-today {
+    background: var(--colorYellow);
+    box-shadow: 0px -1.263px 0px 0px var(--colorBlack) inset;
+}
+
+.fc .fc-toolbar-title {
+    color: var(--colorBlack);
+    font-family: Mansfield-SemiBold;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: capitalize;
+}
+
+.fc .fc-toolbar.fc-header-toolbar {
+    background-color: var(--colorCyan);
+    padding: 15px 10px;
+    margin-bottom: 0;
+}
+
+.fc .fc-col-header-cell-cushion {
+    text-transform: capitalize;
+    color: var(--colorBlack);
+    font-family: Mansfield-SemiBold;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: normal;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+.fc .fc-daygrid-day-number {
+    color: var(--colorBlack);
+    font-family: Mansfield;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.fc-theme-standard td,
+.fc-theme-standard th {
+    color: var(--colorBlack);
+    font-family: Mansfield;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.eventContentCalendar {
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: var(--colorBlack);
+    font-family: Mansfield;
+    font-size: 14px;
+    padding: 5px 8px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.fc-timegrid-event .fc-event-main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 8px;
+    background-color: var(--colorCyan);
+    color: var(--colorBlack);
+    font-family: Mansfield;
+    font-size: 14px;
+    padding: 5px 8px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    overflow: auto;
+}
+
+.fc-timegrid-event .fc-event-main::-webkit-scrollbar {
+    width: 0;
+}
+
+.fc-timegrid-event .fc-event-main p {
+    display: flex;
+    flex-direction: column;
+}
+
+.fc .fc-daygrid-event-harness p {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    gap: 5px;
+}
+
+.fc .fc-button .fc-icon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.fc .fc-daygrid-day-frame {
+    padding: 0 10px;
+}
+
+.fc,
+.fc *,
+.fc ::after,
+.fc ::before {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0;
+}
+
+:root {
+    --fc-today-bg-color: rgb(254, 242, 232);
+}
+
+.fc .fc-highlight {
+    background-color: var(--colorYellow) !important;
+    opacity: 0.5;
+}
+
+.event-confirmed {
+    border: 2px solid var(--colorBlack);
+    background-color: var(--colorCyan);
+}
+
+.event-cancelled {
+    border: 2px solid var(--colorBlack);
+    background-color: var(--colorRed);
+}

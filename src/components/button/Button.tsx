@@ -6,6 +6,7 @@ interface ButtonProps {
     iconRight?: JSX.Element;
     text: string | JSX.Element;
     loading?: boolean;
+    disabled?: boolean;
     maxWidth?: boolean;
     background?: string;
     style?: React.CSSProperties;
@@ -20,6 +21,7 @@ export const Button = ({
     iconRight,
     text,
     loading,
+    disabled = false,
     maxWidth = false,
     style,
     id,
@@ -27,10 +29,11 @@ export const Button = ({
     type = "button",
     design = "buttonCyan",
 }: ButtonProps) => {
+
     return (
         <button
             className={`mainButton ${design}`}
-            disabled={loading && loading}
+            disabled={loading || disabled}
             onClick={onClick}
             id={id}
             type={type}

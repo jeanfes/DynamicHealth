@@ -74,6 +74,7 @@ export const listAppointments = [
         doctor: "Laura Mendoza",
         location: "Clínica Norte",
         status: "Confirmada",
+        specialty: "Cardiología",
     },
     {
         id: 2,
@@ -82,6 +83,7 @@ export const listAppointments = [
         doctor: "José Herrera",
         location: "Hospital Central",
         status: "Cancelada",
+        specialty: "Dermatología",
     },
     {
         id: 3,
@@ -90,6 +92,7 @@ export const listAppointments = [
         doctor: "Sofía Rodríguez",
         location: "Centro Médico",
         status: "Confirmada",
+        specialty: "Neurología",
     },
     {
         id: 4,
@@ -98,6 +101,7 @@ export const listAppointments = [
         doctor: "Carlos Ramírez",
         location: "Clínica Sur",
         status: "Cancelada",
+        specialty: "Ortopedia",
     },
     {
         id: 5,
@@ -106,6 +110,7 @@ export const listAppointments = [
         doctor: "Paula Vargas",
         location: "Hospital General",
         status: "Confirmada",
+        specialty: "Pediatría",
     },
     {
         id: 6,
@@ -114,6 +119,7 @@ export const listAppointments = [
         doctor: "Luis Torres",
         location: "Clínica Norte",
         status: "Confirmada",
+        specialty: "Cardiología",
     },
     {
         id: 7,
@@ -122,6 +128,7 @@ export const listAppointments = [
         doctor: "Camila Gómez",
         location: "Hospital de la Ciudad",
         status: "Confirmada",
+        specialty: "Dermatología",
     },
     {
         id: 8,
@@ -130,6 +137,7 @@ export const listAppointments = [
         doctor: "Andrés Morales",
         location: "Centro Médico",
         status: "Cancelada",
+        specialty: "Cardiología",
     },
     {
         id: 9,
@@ -138,6 +146,7 @@ export const listAppointments = [
         doctor: "Diana Paredes",
         location: "Hospital Central",
         status: "Confirmada",
+        specialty: "Neurología",
     },
     {
         id: 10,
@@ -146,6 +155,7 @@ export const listAppointments = [
         doctor: "Rodrigo Fernández",
         location: "Clínica Familiar",
         status: "Confirmada",
+        specialty: "Pediatría",
     },
     {
         id: 11,
@@ -154,6 +164,7 @@ export const listAppointments = [
         doctor: "Marcela Díaz",
         location: "Clínica Sur",
         status: "Confirmada",
+        specialty: "Dermatología",
     },
     {
         id: 12,
@@ -162,6 +173,7 @@ export const listAppointments = [
         doctor: "Iván López",
         location: "Hospital General",
         status: "Cancelada",
+        specialty: "Ortopedia",
     },
     {
         id: 13,
@@ -170,6 +182,7 @@ export const listAppointments = [
         doctor: "Natalia Ruiz",
         location: "Centro Médico",
         status: "Confirmada",
+        specialty: "Cardiología",
     },
     {
         id: 14,
@@ -178,6 +191,7 @@ export const listAppointments = [
         doctor: "Felipe Gutiérrez",
         location: "Clínica del Norte",
         status: "Confirmada",
+        specialty: "Neurología",
     },
     {
         id: 15,
@@ -186,6 +200,7 @@ export const listAppointments = [
         doctor: "Estefanía Salas",
         location: "Hospital Central",
         status: "Cancelada",
+        specialty: "Pediatría",
     },
     {
         id: 16,
@@ -194,6 +209,7 @@ export const listAppointments = [
         doctor: "Miguel Castillo",
         location: "Clínica Sur",
         status: "Confirmada",
+        specialty: "Ortopedia",
     },
     {
         id: 17,
@@ -202,6 +218,7 @@ export const listAppointments = [
         doctor: "Lorena Peña",
         location: "Hospital General",
         status: "Confirmada",
+        specialty: "Cardiología",
     },
     {
         id: 18,
@@ -210,6 +227,7 @@ export const listAppointments = [
         doctor: "Gustavo Márquez",
         location: "Clínica Familiar",
         status: "Confirmada",
+        specialty: "Dermatología",
     },
     {
         id: 19,
@@ -218,6 +236,7 @@ export const listAppointments = [
         doctor: "Elena Silva",
         location: "Hospital de la Ciudad",
         status: "Cancelada",
+        specialty: "Neurología",
     },
     {
         id: 20,
@@ -226,5 +245,34 @@ export const listAppointments = [
         doctor: "Diego Blanco",
         location: "Centro Médico",
         status: "Confirmada",
+        specialty: "Ortopedia",
     },
+];
+
+export const listDisponibilities = [
+    { id: 1, date: "2025-04-15", time: "09:00 AM", doctor: "Laura Mendoza", location: "Clínica Norte", specialty: "Cardiología" },
+    { id: 2, date: "2025-04-15", time: "10:00 AM", doctor: "Laura Mendoza", location: "Clínica Norte", specialty: "Dermatología" },
+    { id: 3, date: "2025-04-16", time: "11:00 AM", doctor: "Laura Mendoza", location: "Clínica Norte", specialty: "Neurología" },
+    { id: 4, date: "2025-04-16", time: "09:30 AM", doctor: "José Herrera", location: "Hospital Central", specialty: "Ortopedia" },
+    { id: 5, date: "2025-04-16", time: "10:30 AM", doctor: "José Herrera", location: "Hospital Central", specialty: "Pediatría" },
+    { id: 6, date: "2025-04-17", time: "08:00 AM", doctor: "Sofía Rodríguez", location: "Centro Médico", specialty: "Cardiología" },
+    { id: 7, date: "2025-04-17", time: "09:00 AM", doctor: "Sofía Rodríguez", location: "Centro Médico", specialty: "Dermatología" },
+    { id: 8, date: "2025-04-18", time: "10:00 AM", doctor: "Carlos Ramírez", location: "Clínica Sur", specialty: "Neurología" },
+    { id: 9, date: "2025-04-18", time: "11:00 AM", doctor: "Carlos Ramírez", location: "Clínica Sur", specialty: "Ortopedia" },
+    { id: 10, date: "2025-04-19", time: "01:00 PM", doctor: "Paula Vargas", location: "Hospital General", specialty: "Pediatría" },
+    { id: 11, date: "2025-04-19", time: "02:00 PM", doctor: "Paula Vargas", location: "Hospital General", specialty: "Cardiología" },
+    { id: 12, date: "2025-04-20", time: "03:00 PM", doctor: "Luis Torres", location: "Clínica Norte", specialty: "Dermatología" },
+    { id: 13, date: "2025-04-20", time: "04:00 PM", doctor: "Luis Torres", location: "Clínica Norte", specialty: "Neurología" },
+    { id: 14, date: "2025-04-21", time: "08:30 AM", doctor: "Camila Gómez", location: "Hospital de la Ciudad", specialty: "Ortopedia" },
+    { id: 15, date: "2025-04-21", time: "09:30 AM", doctor: "Camila Gómez", location: "Hospital de la Ciudad", specialty: "Pediatría" },
+    { id: 16, date: "2025-04-22", time: "10:00 AM", doctor: "Andrés Morales", location: "Centro Médico", specialty: "Cardiología" },
+    { id: 17, date: "2025-04-22", time: "11:00 AM", doctor: "Andrés Morales", location: "Centro Médico", specialty: "Dermatología" },
+    { id: 18, date: "2025-04-23", time: "01:00 PM", doctor: "Diana Paredes", location: "Hospital Central", specialty: "Neurología" },
+    { id: 19, date: "2025-04-23", time: "02:00 PM", doctor: "Diana Paredes", location: "Hospital Central", specialty: "Ortopedia" },
+    { id: 20, date: "2025-04-24", time: "03:00 PM", doctor: "Rodrigo Fernández", location: "Clínica Familiar", specialty: "Pediatría" },
+    { id: 21, date: "2025-04-24", time: "04:00 PM", doctor: "Rodrigo Fernández", location: "Clínica Familiar", specialty: "Cardiología" },
+    { id: 22, date: "2025-04-25", time: "08:00 AM", doctor: "Marcela Díaz", location: "Clínica Sur", specialty: "Dermatología" },
+    { id: 23, date: "2025-04-25", time: "09:00 AM", doctor: "Marcela Díaz", location: "Clínica Sur", specialty: "Neurología" },
+    { id: 24, date: "2025-04-25", time: "10:00 AM", doctor: "Iván López", location: "Hospital General", specialty: "Ortopedia" },
+    { id: 25, date: "2025-04-25", time: "11:00 AM", doctor: "Iván López", location: "Hospital General", specialty: "Pediatría" },
 ];

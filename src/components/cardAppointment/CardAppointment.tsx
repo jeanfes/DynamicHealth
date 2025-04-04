@@ -1,19 +1,13 @@
+import useAppointmentStore from "@/store/appointmentStore";
 import { Appointment } from "@/interfaces/appointment";
+import { getLocalDateString } from "@/utilities/time";
 import { AlertModal } from "../alertModal/AlertModal";
 import { useState } from "react";
 import "./cardAppointment.scss";
-import useAppointmentStore from "@/store/appointmentStore";
 
 const months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 
-const getLocalDateString = (date: Date): string => {
-    const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, "0");
-    const day = String(date.getDate()).padStart(2, "0");
-    return `${year}-${month}-${day}`;
-};
-
-export const CardAppointment = ({ id, date, doctor, location, status, time }: Appointment) => {
+export const CardAppointment = ({ id, date, doctor, location, status, time, specialty }: Appointment) => {
     const today = getLocalDateString(new Date());
     const { updateAppointment } = useAppointmentStore();
     const formattedDate = date ? new Date(date + "T00:00:00") : null;
@@ -60,12 +54,14 @@ export const CardAppointment = ({ id, date, doctor, location, status, time }: Ap
                     <span className="cardAppointmentDoctor">Dr. {doctor}</span>
                     <span className="cardAppointmentLocation">{location}</span>
                     <span className="cardAppointmentTime">{time}</span>
+                    <span className="cardAppointmentSpecialty">{specialty}</span>
                 </div>
             </button>
             <AlertModal
                 open={open}
                 handleClose={() => setOpen(false)}
                 type="confirmation"
+                designButtonConfirmation="buttonRed"
                 textButton="Cancelar cita"
                 onClick={handleCancelAppointment}
                 showCloseIcon={true}

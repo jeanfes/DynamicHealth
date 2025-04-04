@@ -1,0 +1,70 @@
+.cardAppointment {
+    user-select: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 16px;
+    border: 2px solid var(--colorBlack);
+    box-shadow: 4px 4px 0px var(--colorBlack);
+
+    .cardAppointmentDateContainer {
+        display: flex;
+        background-color: var(--colorWhite);
+        flex-direction: column;
+        align-items: center;
+        border: 2px solid var(--colorBlack);
+        padding: 8px;
+        gap: 4px;
+
+        .cardAppointmentDay {
+            font-family: Mansfield-SemiBold;
+            font-size: 20px;
+            color: var(--colorBlack);
+        }
+
+        .cardAppointmentMonth {
+            font-family: Mansfield-SemiBold;
+            font-size: 14px;
+            color: var(--colorBlack);
+        }
+
+        .cardAppointmentYear {
+            font-family: Mansfield-SemiBold;
+            font-size: 14px;
+            color: var(--colorBlack);
+        }
+    }
+
+    .cardAppointmentDetails {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        width: 100%;
+        padding: 0 16px;
+
+        .cardAppointmentDoctor {
+            font-family: Mansfield-SemiBold;
+            font-size: 24px;
+            color: var(--colorBlack);
+        }
+
+        .cardAppointmentTime {
+            font-family: Mansfield-SemiBold;
+            font-size: 16px;
+            color: var(--colorBlack);
+        }
+
+        .cardAppointmentLocation {
+            font-family: Mansfield-SemiBold;
+            font-size: 16px;
+            color: var(--colorBlack);
+        }
+    }
+
+    &:active {
+        transform: translate(2px, 2px);
+        box-shadow: 2px 2px 0px var(--colorBlack);
+    }
+}

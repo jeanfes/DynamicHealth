@@ -57,7 +57,7 @@
             padding: 12px 0px;
             height: 45px;
             border-radius: 50%;
-            border: 2px solid var(--colorBlack);
+            border: 3px solid var(--colorBlack);
             background-color: var(--colorWhite);
             display: flex;
             align-items: center;
@@ -67,6 +67,7 @@
             p {
                 font-family: Mansfield;
                 font-size: 14px;
+                word-spacing: -5px;
                 color: var(--colorBlack);
                 font-weight: 600;
             }
@@ -115,7 +116,6 @@
                         border: 2px solid var(--colorBlack);
                     }
                 }
-
             }
         }
     }

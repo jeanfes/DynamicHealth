@@ -1,6 +1,7 @@
 import useAppointmentStore from "@/store/appointmentStore";
 import { Disponibility } from "@/interfaces/disponibility";
 import { AlertModal } from "../alertModal/AlertModal";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { toast } from "sonner";
 import "./cardDisponibility.scss";
@@ -11,6 +12,7 @@ export const CardDisponibility = ({ id, date, doctor, location, time, specialty 
     const { addAppointment } = useAppointmentStore();
     const formattedDate = date ? new Date(date + "T00:00:00") : null;
     const [open, setOpen] = useState(false);
+    const navigate = useNavigate();
 
     const handleReserveDisponibility = () => {
         const appointment = {
@@ -38,6 +40,9 @@ export const CardDisponibility = ({ id, date, doctor, location, time, specialty 
                 },
             }
         );
+        setTimeout(() => {
+            navigate("/home");
+        }, 2000);
     }
 
     return (

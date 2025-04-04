@@ -40,12 +40,6 @@ const RequestAppointment = () => {
         }
     };
 
-    const handleCloseModal = () => {
-        if (specialty) {
-            setOpen(false);
-        }
-    };
-
     return (
         <>
             {selectedSpecialty && (
@@ -69,9 +63,9 @@ const RequestAppointment = () => {
             <AlertModal
                 open={open}
                 type="modal"
-                title="Selecciona una especialidad"
+                title="Seleccione una especialidad"
                 showCloseIcon={false}
-                handleClose={handleCloseModal}
+                handleClose={() => setOpen(false)}
                 designButtonConfirmation="buttonWhite"
                 textButton="Consultar disponibilidad"
                 onClick={handleConfirmAppointment}

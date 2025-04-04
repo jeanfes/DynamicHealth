@@ -1,5 +1,5 @@
 import { Appointment } from "@/interfaces/appointment";
-import { AlertModal } from "../modal/AlertModal";
+import { AlertModal } from "../alertModal/AlertModal";
 import { useState } from "react";
 import "./cardAppointment.scss";
 import useAppointmentStore from "@/store/appointmentStore";

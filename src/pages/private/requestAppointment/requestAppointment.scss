@@ -24,7 +24,19 @@
         grid-template-rows: repeat(3, 1fr);
         grid-template-columns: repeat(3, 1fr);
         gap: 16px;
-        padding: 0 16px;
+    }
+
+    .notFoundDisponibilities {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        grid-row: 1 / 4;
+        grid-column: 1 / 4;
+        font-family: Mansfield-SemiBold;
+        height: 400px;
+        width: 100%;
+        color: var(--colorBlack);
+        font-size: 24px;
     }
 }
 

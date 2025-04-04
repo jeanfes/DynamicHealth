@@ -7,6 +7,7 @@ import { useFormik } from "formik";
 import { useState } from "react";
 import "./loginRegister.scss";
 import { User } from "@/interfaces/user";
+import { toast } from "sonner";
 
 const LoginRegister = () => {
     const location = useLocation();
@@ -42,7 +43,17 @@ const LoginRegister = () => {
                     }, 1000);
                 } else {
                     setLoading(false);
-                    alert("Usuario no encontrado");
+                    toast("Credenciales incorrectas", {
+                        style: {
+                            fontFamily: "Mansfield-SemiBold",
+                            fontSize: "16px",
+                            borderRadius: "0px",
+                            border: "2px solid var(--colorBlack)",
+                            boxShadow: "4px 4px 0px var(--colorBlack)",
+                            background: "var(--colorRed)",
+                            color: "var(--colorBlack)",
+                        },
+                    })
                 }
             }
         },

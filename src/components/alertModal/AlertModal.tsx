@@ -80,8 +80,8 @@ export const AlertModal = ({
                 <div className="alertModalHeader">
                     <Typography
                         style={{
+                            fontFamily: "Mansfield-Semibold",
                             fontSize: "20px",
-                            fontWeight: 700,
                             color: styles.titleColor,
                         }}
                     >

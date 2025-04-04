@@ -7,6 +7,14 @@ import { Button } from "@/components/button/Button";
 import { useState } from "react";
 import "./requestAppointment.scss";
 
+const specialties = [
+    { value: "General", label: "General" },
+    { value: "Cardiología", label: "Cardiología" },
+    { value: "Dermatología", label: "Dermatología" },
+    { value: "Neurología", label: "Neurología" },
+    { value: "Pediatría", label: "Pediatría" },
+];
+
 const RequestAppointment = () => {
     const [open, setOpen] = useState(true);
     const [specialty, setSpecialty] = useState<string>("");
@@ -15,17 +23,20 @@ const RequestAppointment = () => {
 
     const sortedDisponibilities = [...listDisponibilities]
         .filter((disponibility) => disponibility.specialty === selectedSpecialty)
-        .sort(
-            (a, b) =>
-                new Date(b.date).getTime() - new Date(a.date).getTime()
-        );
+        .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+
+    const filteredDisponibilities = sortedDisponibilities.filter((disponibility) => {
+        if (!searchValue.trim()) return true;
+        const lowerSearch = searchValue.toLowerCase();
+        const doctor = disponibility.doctor.toLowerCase();
+        const location = disponibility.location.toLowerCase();
+        return doctor.includes(lowerSearch) || location.includes(lowerSearch);
+    });
 
     const handleConfirmAppointment = () => {
         if (specialty) {
             setSelectSpecialty(specialty.trim());
             setOpen(false);
-        } else {
-            return;
         }
     };
 
@@ -42,18 +53,23 @@ const RequestAppointment = () => {
                     <h1>Solicitar cita de {selectedSpecialty}</h1>
                     <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
                     <div className="requestAppointmentList">
-                        {sortedDisponibilities.map((disponibility) => (
-                            <CardDisponibility
-                                key={disponibility.id}
-                                {...disponibility}
-                            />
-                        ))}
+                        {filteredDisponibilities.length > 0 ? (
+                            filteredDisponibilities.map((disponibility) => (
+                                <CardDisponibility
+                                    key={disponibility.id}
+                                    {...disponibility}
+                                />
+                            ))
+                        ) : (
+                            <p className="notFoundDisponibilities">No se encontraron resultados.</p>
+                        )}
                     </div>
                 </div>
             )}
             <AlertModal
                 open={open}
                 type="modal"
+                title="Selecciona una especialidad"
                 showCloseIcon={false}
                 handleClose={handleCloseModal}
                 designButtonConfirmation="buttonWhite"
@@ -64,13 +80,7 @@ const RequestAppointment = () => {
                     <Select
                         value={specialty}
                         onChange={setSpecialty}
-                        options={[
-                            { value: "Cardiología", label: "Cardiología" },
-                            { value: "Dermatología", label: "Dermatología" },
-                            { value: "Neurología", label: "Neurología" },
-                            { value: "Ortopedia", label: "Ortopedia" },
-                            { value: "Pediatría", label: "Pediatría" },
-                        ]}
+                        options={specialties}
                     />
                     <Button
                         design="buttonWhite"

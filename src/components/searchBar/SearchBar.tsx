@@ -7,13 +7,13 @@ interface SearchBarProps {
     showIcon?: boolean;
     searchValue?: string;
     setSearchValue: (value: string) => void;
-    debounced?: boolean;
+    debounced?: number;
     placeholder?: string;
 }
 
-export const SearchBar = ({ showIcon = true, searchValue = '', setSearchValue, debounced = false, placeholder = 'Buscar...' }: SearchBarProps) => {
+export const SearchBar = ({ showIcon = true, searchValue = '', setSearchValue, debounced = 500, placeholder = 'Buscar...' }: SearchBarProps) => {
     const [localValue, setLocalValue] = useState(searchValue);
-    const debouncedValue = useDebounce(localValue, 500);
+    const debouncedValue = useDebounce(localValue, debounced);
 
     useEffect(() => {
         if (debounced) {
@@ -31,7 +31,7 @@ export const SearchBar = ({ showIcon = true, searchValue = '', setSearchValue, d
         <div className="searchBar">
             {showIcon && (
                 <div className="searchIcon">
-                    <IconSearch color="#A1A1A1" width="16" height="16" />
+                    <IconSearch color="var(--colorBlack)" width="18" height="18" />
                 </div>
             )}
             <input

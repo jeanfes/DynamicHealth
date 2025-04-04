@@ -5,4 +5,5 @@ export interface Availability {
     doctor: string;
     location: string;
     specialty: string;
+    status: string;
 }

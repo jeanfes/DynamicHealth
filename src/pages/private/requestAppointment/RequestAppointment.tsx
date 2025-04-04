@@ -1,7 +1,7 @@
 import { CardAvailability } from "@/components/cardAvailability/CardAvailability";
 import { AlertModal } from "@/components/alertModal/AlertModal";
 import { SearchBar } from "@/components/searchBar/SearchBar";
-import { listAvailabilities } from "@/utilities/storage";
+import useAvailabilityStore from "@/store/availabilityStore";
 import { Select } from "@/components/select/Select";
 import { Button } from "@/components/button/Button";
 import { useState } from "react";
@@ -17,12 +17,15 @@ const specialties = [
 
 const RequestAppointment = () => {
     const [open, setOpen] = useState(true);
+    const { availabilities } = useAvailabilityStore();
     const [specialty, setSpecialty] = useState<string>("");
     const [searchValue, setSearchValue] = useState<string>("");
     const [selectedSpecialty, setSelectSpecialty] = useState<string>("");
 
-    const sortedAvailabilities = [...listAvailabilities]
-        .filter((disponibility) => disponibility.specialty === selectedSpecialty)
+    const sortedAvailabilities = [...availabilities]
+        .filter((disponibility) =>
+            disponibility.specialty === selectedSpecialty && disponibility.status !== "Reservada"
+        )
         .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
     const filteredAvailabilities = sortedAvailabilities.filter((disponibility) => {

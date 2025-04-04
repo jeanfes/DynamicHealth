@@ -1,3 +1,4 @@
+import useAvailabilityStore from "@/store/availabilityStore";
 import useAppointmentStore from "@/store/appointmentStore";
 import { Availability } from "@/interfaces/availability";
 import { AlertModal } from "../alertModal/AlertModal";
@@ -12,6 +13,7 @@ export const CardAvailability = ({ id, date, doctor, location, time, specialty }
     const { addAppointment } = useAppointmentStore();
     const formattedDate = date ? new Date(date + "T00:00:00") : null;
     const [open, setOpen] = useState(false);
+    const { updateAvailability } = useAvailabilityStore();
     const navigate = useNavigate();
 
     const handleReserveAvailability = () => {
@@ -25,6 +27,7 @@ export const CardAvailability = ({ id, date, doctor, location, time, specialty }
             status: "Confirmada",
         };
         addAppointment(appointment);
+        updateAvailability(id.toString(), { ...appointment, status: "Reservada" });
         setOpen(false);
         toast(
             "Cita reservada con éxito",
@@ -40,9 +43,7 @@ export const CardAvailability = ({ id, date, doctor, location, time, specialty }
                 },
             }
         );
-        setTimeout(() => {
-            navigate("/home");
-        }, 2000);
+        navigate("/home");
     }
 
     return (

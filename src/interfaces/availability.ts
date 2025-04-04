@@ -1,4 +1,4 @@
-export interface Disponibility {
+export interface Availability {
     id: number;
     date: string;
     time: string;

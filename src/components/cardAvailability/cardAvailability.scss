@@ -1,4 +1,4 @@
-.cardDisponibility {
+.cardAvailability {
     user-select: none;
     cursor: pointer;
     display: flex;
@@ -10,7 +10,7 @@
     border: 2px solid var(--colorBlack);
     box-shadow: 4px 4px 0px var(--colorBlack);
 
-    .cardDisponibilityDateContainer {
+    .cardAvailabilityDateContainer {
         display: flex;
         background-color: var(--colorWhite);
         flex-direction: column;
@@ -19,51 +19,51 @@
         padding: 12px;
         gap: 4px;
 
-        .cardDisponibilityDay {
+        .cardAvailabilityDay {
             font-family: Mansfield-SemiBold;
             font-size: 20px;
             color: var(--colorBlack);
         }
 
-        .cardDisponibilityMonth {
+        .cardAvailabilityMonth {
             font-family: Mansfield-SemiBold;
             font-size: 14px;
             color: var(--colorBlack);
         }
 
-        .cardDisponibilityYear {
+        .cardAvailabilityYear {
             font-family: Mansfield-SemiBold;
             font-size: 14px;
             color: var(--colorBlack);
         }
     }
 
-    .cardDisponibilityDetails {
+    .cardAvailabilityDetails {
         display: flex;
         flex-direction: column;
         gap: 4px;
         width: 100%;
         padding: 0 4px;
 
-        .cardDisponibilityDoctor {
+        .cardAvailabilityDoctor {
             font-family: Mansfield-SemiBold;
             font-size: 24px;
             color: var(--colorBlack);
         }
 
-        .cardDisponibilityTime {
+        .cardAvailabilityTime {
             font-family: Mansfield-SemiBold;
             font-size: 16px;
             color: var(--colorBlack);
         }
 
-        .cardDisponibilityLocation {
+        .cardAvailabilityLocation {
             font-family: Mansfield-SemiBold;
             font-size: 16px;
             color: var(--colorBlack);
         }
 
-        .cardDisponibilitySpecialty {
+        .cardAvailabilitySpecialty {
             font-family: Mansfield-SemiBold;
             font-size: 16px;
             color: var(--colorBlack);
@@ -76,10 +76,10 @@
     }
 }
 
-.cardDisponibilityModal {
+.cardAvailabilityModal {
     margin-bottom: 12px;
 
-    .cardDisponibilityModalTitle {
+    .cardAvailabilityModalTitle {
         font-family: Mansfield-SemiBold;
         font-size: 24px;
         color: var(--colorBlack);
@@ -87,7 +87,7 @@
         margin-bottom: 8px;
     }
 
-    .cardDisponibilityModalDetails {
+    .cardAvailabilityModalDetails {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -98,13 +98,13 @@
             border-bottom: none;
         }
 
-        .cardDisponibilityModalLabel {
+        .cardAvailabilityModalLabel {
             font-family: Mansfield-SemiBold;
             font-size: 16px;
             color: var(--colorBlack);
         }
 
-        .cardDisponibilityModalValue {
+        .cardAvailabilityModalValue {
             font-family: Mansfield-SemiBold;
             font-size: 16px;
             color: var(--colorBlack);

@@ -1,7 +1,7 @@
-import { CardDisponibility } from "@/components/cardDisponibility/CardDisponibility";
+import { CardAvailability } from "@/components/cardAvailability/CardAvailability";
 import { AlertModal } from "@/components/alertModal/AlertModal";
 import { SearchBar } from "@/components/searchBar/SearchBar";
-import { listDisponibilities } from "@/utilities/storage";
+import { listAvailabilities } from "@/utilities/storage";
 import { Select } from "@/components/select/Select";
 import { Button } from "@/components/button/Button";
 import { useState } from "react";
@@ -21,11 +21,11 @@ const RequestAppointment = () => {
     const [searchValue, setSearchValue] = useState<string>("");
     const [selectedSpecialty, setSelectSpecialty] = useState<string>("");
 
-    const sortedDisponibilities = [...listDisponibilities]
+    const sortedAvailabilities = [...listAvailabilities]
         .filter((disponibility) => disponibility.specialty === selectedSpecialty)
         .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
-    const filteredDisponibilities = sortedDisponibilities.filter((disponibility) => {
+    const filteredAvailabilities = sortedAvailabilities.filter((disponibility) => {
         if (!searchValue.trim()) return true;
         const lowerSearch = searchValue.toLowerCase();
         const doctor = disponibility.doctor.toLowerCase();
@@ -47,15 +47,15 @@ const RequestAppointment = () => {
                     <h1>Solicitar cita de {selectedSpecialty}</h1>
                     <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
                     <div className="requestAppointmentList">
-                        {filteredDisponibilities.length > 0 ? (
-                            filteredDisponibilities.map((disponibility) => (
-                                <CardDisponibility
-                                    key={disponibility.id}
-                                    {...disponibility}
+                        {filteredAvailabilities.length > 0 ? (
+                            filteredAvailabilities.map((availability) => (
+                                <CardAvailability
+                                    key={availability.id}
+                                    {...availability}
                                 />
                             ))
                         ) : (
-                            <p className="notFoundDisponibilities">No se encontraron resultados.</p>
+                            <p className="notFoundAvailabilities">No se encontraron resultados.</p>
                         )}
                     </div>
                 </div>

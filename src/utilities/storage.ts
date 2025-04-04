@@ -249,7 +249,7 @@ export const listAppointments = [
     },
 ];
 
-export const listDisponibilities = [
+export const listAvailabilities = [
     { id: 1, date: "2025-04-15", time: "09:00 AM", doctor: "Laura Mendoza", location: "Clínica Norte", specialty: "Cardiología" },
     { id: 2, date: "2025-04-15", time: "10:00 AM", doctor: "Laura Mendoza", location: "Clínica Norte", specialty: "Dermatología" },
     { id: 3, date: "2025-04-16", time: "11:00 AM", doctor: "Laura Mendoza", location: "Clínica Norte", specialty: "Neurología" },

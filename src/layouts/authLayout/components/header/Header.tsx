@@ -12,7 +12,7 @@ export const Header = () => {
         <img src={LogoDynamicHealth} alt="IconHealth" />
         <p>Dynamic Health</p>
       </div>
-      <Button text="Descarga la aplicación" design="secondaryButton" />
+      <Button text="Descarga la aplicación" design="buttonYellow" />
     </div>
   );
 };

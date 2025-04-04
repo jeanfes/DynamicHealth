@@ -28,7 +28,7 @@ const LoginRegister = () => {
                     setLoading(false);
                 }, 500);
             } else {
-                const getUsersStorage = localStorage.getItem("usersStorage");
+                const getUsersStorage = localStorage.getItem("listUsers");
                 const usersStorage = getUsersStorage ? JSON.parse(getUsersStorage) : [];
                 const userFound = usersStorage.find(
                     (user: User) =>
@@ -86,7 +86,7 @@ const LoginRegister = () => {
                             <Button
                                 type="submit"
                                 text="Registrarse"
-                                design="primaryButton"
+                                design="buttonCyan"
                                 maxWidth={false}
                                 loading={loading}
                                 onClick={handleSubmit}
@@ -118,7 +118,7 @@ const LoginRegister = () => {
                             <Button
                                 text="Entrar"
                                 type="submit"
-                                design="primaryButton"
+                                design="buttonCyan"
                                 loading={loading}
                                 maxWidth={false}
                                 onClick={handleSubmit}
@@ -136,7 +136,7 @@ const LoginRegister = () => {
                         </p>
                         <Button
                             text="Entrar"
-                            design="tertiaryButton"
+                            design="buttonWhite"
                             onClick={switchToLogin}
                             maxWidth={false}
                         />
@@ -148,7 +148,7 @@ const LoginRegister = () => {
                         </p>
                         <Button
                             text="Registrarse"
-                            design="tertiaryButton"
+                            design="buttonWhite"
                             onClick={switchToRegister}
                             maxWidth={false}
                         />

@@ -1,16 +1,10 @@
 import HealthLanding from "@/assets/images/healthLanding.png";
 import { Button } from "@/components/button/Button";
-import { usersStorage } from "@/utilities/storage";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
 import "./landing.scss";
 
 const Landing = () => {
     const navigate = useNavigate();
-
-    useEffect(() => {
-        localStorage.setItem("usersStorage", JSON.stringify(usersStorage));
-    }, []);
 
     return (
         <div className="landing">
@@ -21,13 +15,13 @@ const Landing = () => {
                 <div className="landingButtons">
                     <Button
                         text="Registrarse"
-                        design="primaryButton"
+                        design="buttonCyan"
                         onClick={() => navigate("/login-register", { state: { activeFrom: true } })}
                         maxWidth
                     />
                     <Button
                         text="Entrar"
-                        design="tertiaryButton"
+                        design="buttonWhite"
                         onClick={() => navigate("/login-register", { state: { activeFrom: false } })}
                         maxWidth
                     />

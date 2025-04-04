@@ -7,7 +7,6 @@ interface AuthStore {
     isAuth: boolean;
     login: (user: User) => void;
     logout: () => void;
-    updateProfile: (updatedUser: Partial<User>) => void;
 }
 
 export const useAuthStore = create<AuthStore>()(persist<AuthStore>((set) => {
@@ -23,13 +22,7 @@ export const useAuthStore = create<AuthStore>()(persist<AuthStore>((set) => {
         logout: () => {
             set({ user: null, isAuth: false });
             sessionStorage.removeItem("auth-storage");
-            localStorage.removeItem("remember-user");
         },
-        updateProfile: (updatedUser: Partial<User>) => {
-            set((state) => ({
-                user: state.user ? { ...state.user, ...updatedUser } : null,
-            }));
-        }
     };
 }, {
     name: "auth-storage",

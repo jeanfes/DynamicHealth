@@ -2,6 +2,7 @@ import useAppointmentStore from "@/store/appointmentStore";
 import { Disponibility } from "@/interfaces/disponibility";
 import { AlertModal } from "../alertModal/AlertModal";
 import { useState } from "react";
+import { toast } from "sonner";
 import "./cardDisponibility.scss";
 
 const months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
@@ -23,6 +24,20 @@ export const CardDisponibility = ({ id, date, doctor, location, time, specialty 
         };
         addAppointment(appointment);
         setOpen(false);
+        toast(
+            "Cita reservada con éxito",
+            {
+                style: {
+                    fontFamily: "Mansfield-SemiBold",
+                    fontSize: "16px",
+                    borderRadius: "0px",
+                    border: "2px solid var(--colorBlack)",
+                    boxShadow: "4px 4px 0px var(--colorBlack)",
+                    background: "var(--colorCyan)",
+                    color: "var(--colorBlack)",
+                },
+            }
+        );
     }
 
     return (

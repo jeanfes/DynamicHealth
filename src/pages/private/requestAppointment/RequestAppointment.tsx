@@ -1,5 +1,6 @@
 import { CardDisponibility } from "@/components/cardDisponibility/CardDisponibility";
 import { AlertModal } from "@/components/alertModal/AlertModal";
+import { SearchBar } from "@/components/searchBar/SearchBar";
 import { listDisponibilities } from "@/utilities/storage";
 import { Select } from "@/components/select/Select";
 import { Button } from "@/components/button/Button";
@@ -9,6 +10,7 @@ import "./requestAppointment.scss";
 const RequestAppointment = () => {
     const [open, setOpen] = useState(true);
     const [specialty, setSpecialty] = useState<string>("");
+    const [searchValue, setSearchValue] = useState<string>("");
     const [selectedSpecialty, setSelectSpecialty] = useState<string>("");
 
     const sortedDisponibilities = [...listDisponibilities]
@@ -38,6 +40,7 @@ const RequestAppointment = () => {
             {selectedSpecialty && (
                 <div className="requestAppointment">
                     <h1>Solicitar cita de {selectedSpecialty}</h1>
+                    <SearchBar searchValue={searchValue} setSearchValue={setSearchValue} />
                     <div className="requestAppointmentList">
                         {sortedDisponibilities.map((disponibility) => (
                             <CardDisponibility

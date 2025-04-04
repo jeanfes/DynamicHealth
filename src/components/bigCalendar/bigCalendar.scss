@@ -104,6 +104,7 @@
 }
 
 .eventContentCalendar {
+    overflow: hidden;
     width: 100%;
     cursor: pointer;
     display: flex;
@@ -111,11 +112,7 @@
     gap: 8px;
     color: var(--colorBlack);
     font-family: Mansfield;
-    font-size: 14px;
     padding: 5px 8px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
 }
 
 .fc-timegrid-event .fc-event-main {
@@ -156,10 +153,6 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-}
-
-.fc .fc-daygrid-day-frame {
-    padding: 0 10px;
 }
 
 .fc,

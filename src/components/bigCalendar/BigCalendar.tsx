@@ -7,6 +7,7 @@ import timeGridPlugin from "@fullcalendar/timegrid";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import FullCalendar from "@fullcalendar/react";
 import { useState } from "react";
+import { toast } from "sonner";
 import "./bigCalendar.scss";
 
 interface CalendarEvent {
@@ -71,6 +72,20 @@ export const BigCalendar = ({ values }: BigCalendarProps) => {
             updateAppointment(selectedEvent.id, { status: "Cancelada" });
         }
         setOpen(false);
+        toast(
+            "Cita cancelada con éxito",
+            {
+                style: {
+                    fontFamily: "Mansfield-SemiBold",
+                    fontSize: "16px",
+                    borderRadius: "0px",
+                    border: "2px solid var(--colorBlack)",
+                    boxShadow: "4px 4px 0px var(--colorBlack)",
+                    background: "var(--colorCyan)",
+                    color: "var(--colorBlack)",
+                },
+            }
+        );
     };
 
     return (

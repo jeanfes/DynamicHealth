@@ -5,12 +5,11 @@
     padding: 12px 16px;
     align-items: center;
     gap: 16px;
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.30);
-    background: var(--backgroundGlass);
-    background-blend-mode: overlay, normal;
-    box-shadow: 0px 0px 8.601px 0px rgba(0, 0, 0, 0.10);
-    backdrop-filter: blur(13px);
+    border-radius: 0px;
+    border: 2px solid var(--colorBlack);
+    box-shadow: 4px 4px 0px var(--colorBlack);
+    background: var(--colorWhite);
+    color: var(--colorBlack);
 
     .searchIcon {
         display: flex;

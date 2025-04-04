@@ -1,0 +1,31 @@
+.notFoundContainer {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+
+    h1 {
+        font-family: Mansfield;
+        color: var(--colorBlack);
+        font-size: 80px;
+        font-weight: 700;
+    }
+
+    h2 {
+        font-family: Mansfield;
+        color: var(--colorBlack);
+        font-size: 32px;
+        font-weight: 400;
+    }
+
+    p {
+        font-family: Mansfield;
+        color: var(--colorBlack);
+        font-size: 24px;
+        font-weight: 400;
+    }
+}

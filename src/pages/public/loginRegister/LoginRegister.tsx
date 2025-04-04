@@ -3,11 +3,11 @@ import { Button } from "@/components/button/Button";
 import { Input } from "@/components/input/Input";
 import { useAuthStore } from "@/store/authStore";
 import { useLocation } from "react-router-dom";
+import { User } from "@/interfaces/user";
 import { useFormik } from "formik";
 import { useState } from "react";
-import "./loginRegister.scss";
-import { User } from "@/interfaces/user";
 import { toast } from "sonner";
+import "./loginRegister.scss";
 
 const LoginRegister = () => {
     const location = useLocation();
@@ -25,9 +25,25 @@ const LoginRegister = () => {
         onSubmit: (values) => {
             setLoading(true);
             if (isRegister) {
+                const getUsersStorage = localStorage.getItem("listUsers");
+                const usersStorage = getUsersStorage ? JSON.parse(getUsersStorage) : [];
+                const newUser: User = {
+                    id: crypto.randomUUID(),
+                    identification_number: values.registerIdentificationNumber || "",
+                    profile: {
+                        id: usersStorage.length + 1,
+                        identification_type: "CC",
+                        name: "Usuario",
+                        last_name: "Nuevo",
+                        email: "",
+                        birth_date: values.registerBirthDate || "",
+                    },
+                    token: crypto.randomUUID(),
+                };
                 setTimeout(() => {
                     setLoading(false);
-                }, 500);
+                    login(newUser);
+                }, 1000);
             } else {
                 const getUsersStorage = localStorage.getItem("listUsers");
                 const usersStorage = getUsersStorage ? JSON.parse(getUsersStorage) : [];
